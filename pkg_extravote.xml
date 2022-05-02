@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	version="3.10"
+	type="package" method="upgrade">
+	<name>ExtraVote</name>
+	<author>Conseilgouz</author>
+	<creationDate>Feb 2022</creationDate>
+	<packagename>extravote</packagename>
+	<copyright>Copyright (C) 2022 Conseilgouz. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
+	<authorUrl>https://www.conseilgouz.com</authorUrl>
+	<version>4.0.4</version>
+	<description>Extravote provides the ajax, 5 star rating feature to your Joomla Content.</description>
+	<files folder="packages">
+		<file type="plugin" id="extravote" group="content">plg_extravote_content.zip</file>
+		<file type="plugin" id="extravote" group="ajax">plg_extravote_ajax.zip</file>
+	</files>
+	<updateservers>
+	<server type="extension" name="Extravote" priority="1">https://www.conseilgouz.com/updates/pkg_extravote_update.xml</server>
+	</updateservers>
+	
+</extension>

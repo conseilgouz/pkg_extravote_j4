@@ -1,0 +1,59 @@
+<changelogs>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
+		<version>4.0.4</version>
+        <note>
+            <item>Update :02/05/2022</item>
+        </note>
+        <fix>
+			<item>Ajax : missing user_id on create</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
+		<version>4.0.3</version>
+        <note>
+            <item>Update : 26/02/2022</item>
+        </note>
+        <fix>
+			<item>wrong vote count</item>
+			<item>hide standard vote in blog/content view</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
+		<version>4.0.2</version>
+        <note>
+            <item>Update : 26/02/2022</item>
+        </note>
+        <fix>
+			<item>1 vote per article/user does not update #__content_rating / #__content_extravote table</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
+		<version>4.0.1</version>
+        <note>
+            <item>Update : 25/02/2022</item>
+        </note>
+        <addition>
+            <item>1 vote per user/article</item>
+        </addition>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
+		<version>4.0.0</version>
+        <note>
+            <item>Update : 25/02/2022</item>
+        </note>
+        <addition>
+            <item>Joomla 4.0 compatibility</item>
+			<item>Update server</item>
+        </addition>
+	</changelog>
+</changelogs>
