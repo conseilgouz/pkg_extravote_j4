@@ -61,8 +61,8 @@ class plgAjaxExtravote extends CMSPlugin
 			if($table=='#__content_extravote') :
 				$columns[] = 'extra_id';
 				$values[] = $xid;
-				$columns[] = 'user_id';
-				$values[] = $user->id;
+				// $columns[] = 'user_id';
+				// $values[] = $user->id;
 			endif;
 			$query
 				->insert($db->quoteName($table))
