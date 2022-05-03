@@ -78,12 +78,13 @@ class plgContentExtraVote extends CMSPlugin
  	protected function plgContentExtraVoteStars( $id, $rating_sum, $rating_count, $xid, $ip )
 	{
 		$document = Factory::getDocument();
-		
+		$plg	= 'media/plg_content_extravote/';
+			/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
+		$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 	 	if ( $this->params->get('css', 1) ) :
-			$document->addStyleSheet(JURI::root(true).'/plugins/content/extravote/assets/extravote.css');
+			$wa->registerAndUseStyle('extravotecontent', $plg.'extravote.css');
 		endif;
-		
-		$document->addScript(JURI::root(true).'/plugins/content/extravote/assets/extravote.js');
+		$wa->registerAndUseScript('extravotecontent', $plg.'extravote.js');
 
      	global $plgContentExtraVoteAddScript;
 		

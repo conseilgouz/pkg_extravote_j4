@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.10" type="plugin"	group="ajax" method="upgrade">
+<extension version="4.0" type="plugin"	group="ajax" method="upgrade">
 	<name>PLG_AJAX_EXTRAVOTE</name>
 	<author>Conseilgouz</author>
 	<creationDate>May 2022</creationDate>
@@ -7,12 +7,18 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.0.4</version>
+	<version>4.0.6</version>
 	<description>PLG_AJAX_EXTRAVOTE_XML_DESCRIPTION</description>
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
 	<files>
 		<filename plugin="extravote">extravote.php</filename>
 		<filename>index.html</filename>
-		<folder>language</folder>
 	</files>
+	<languages>
+		<language tag="fr-FR">language/fr-FR/plg_ajax_extravote.ini</language>
+		<language tag="fr-FR">language/fr-FR/plg_ajax_extravote.sys.ini</language>
+		<language tag="en-GB">language/en-GB/plg_ajax_extravote.ini</language>
+		<language tag="en-GB">language/en-GB/plg_ajax_extravote.sys.ini</language>
+	</languages>
+	
 </extension>
