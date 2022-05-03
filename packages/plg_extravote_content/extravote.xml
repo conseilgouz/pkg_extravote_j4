@@ -187,7 +187,7 @@
 				
 				<field name="table" type="radio"
 					class="btn-group"
-					default="1"
+					default="0"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_USE_EXTRAVOTE_TABLE_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_USE_EXTRAVOTE_TABLE_DESC">
 					<option value="1">JYES</option>
