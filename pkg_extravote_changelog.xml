@@ -2,13 +2,27 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.0.7</version>
+        <note>
+            <item>Update :07/03/2023</item>
+        </note>
+		<fix>
+			<item>PHP 8.2 compatibility</item>
+		</fix>
+        <change>
+			<item>Update/changelog on github</item>
+		</change>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.0.6</version>
         <note>
             <item>Update :03/05/2022</item>
         </note>
         <addition>
 			<item>use WebAssets</item>
-		</fix>
+		</addition>
 	</changelog>
 	<changelog>
 		<element>extravote</element>

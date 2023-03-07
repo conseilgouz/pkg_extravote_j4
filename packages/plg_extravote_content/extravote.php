@@ -4,7 +4,7 @@
 # ------------------------------------------------------------------------
 # author    Conseilgouz
 # from joomlahill Plugin
-# Copyright (C) 2022 www.conseilgouz.com. All Rights Reserved.
+# Copyright (C) 2023 www.conseilgouz.com. All Rights Reserved.
 # @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 -------------------------------------------------------------------------*/
 
@@ -20,7 +20,7 @@ use Joomla\CMS\Language\Text;
 class plgContentExtraVote extends CMSPlugin
 {
 	protected $article_id;
-	
+	protected $view;
 	public function __construct(& $subject, $config)
 	{
 		parent::__construct($subject, $config);
@@ -77,7 +77,6 @@ class plgContentExtraVote extends CMSPlugin
   
  	protected function plgContentExtraVoteStars( $id, $rating_sum, $rating_count, $xid, $ip )
 	{
-		$document = Factory::getDocument();
 		$plg	= 'media/plg_content_extravote/';
 			/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 		$wa = Factory::getApplication()->getDocument()->getWebAssetManager();
@@ -98,7 +97,7 @@ class plgContentExtraVote extends CMSPlugin
 		$rating  = 0;
 		
 	 	if(!$plgContentExtraVoteAddScript){ 
-         	$document->addScriptDeclaration("
+         	$wa->addInlineStyle("
 				var ev_basefolder = '".JURI::base(true)."';
 				var extravote_text=Array('".
 					TEXT::_('PLG_CONTENT_EXTRAVOTE_MESSAGE_NO_AJAX')."','".

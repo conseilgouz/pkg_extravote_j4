@@ -2,12 +2,12 @@
 <extension 	version="4.0"	type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_EXTRAVOTE</name>
 	<author>ConseilGouz</author>
-	<creationDate>May 2022</creationDate>
-	<copyright>Copyright (C) 2022 Conseilgouz. All rights reserved.</copyright>
+	<creationDate>2023/03/07</creationDate>
+	<copyright>Copyright (C) 2023 Conseilgouz. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.0.6</version>
+	<version>4.0.7</version>
 	<description>PLG_CONTENT_EXTRAVOTE_XML_DESCRIPTION</description>
 	
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
