@@ -17,7 +17,7 @@
 		<file type="plugin" id="extravote" group="ajax">plg_extravote_ajax.zip</file>
 	</files>
 	<changelogurl>
-		https://raw.githubusercontent.com/conseilgouz/pkg_extravote_j4/master/plg_autoreadmore_changelog.xml
+		https://raw.githubusercontent.com/conseilgouz/pkg_extravote_j4/master/pkg_extravote_changelog.xml
 	</changelogurl>
 	
 	<updateservers>
