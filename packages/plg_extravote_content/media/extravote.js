@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------
 # author    Conseilgouz
 # from joomlahill Plugin
-# Copyright (C) 2022 www.conseilgouz.com. All Rights Reserved.
+# Copyright (C) 2023 www.conseilgouz.com. All Rights Reserved.
 # @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 -------------------------------------------------------------------------*/
 function JVXVote(id,i,total,total_count,xid,show_counter,show_rating,rating_mode){
@@ -13,7 +13,7 @@ function JVXVote(id,i,total,total_count,xid,show_counter,show_rating,rating_mode
 	var info = document.getElementById('extravote_'+id+'_'+xid);
 	var text = info.innerHTML;
 	if (info.parentNode.className.indexOf('voted')==-1) {
-		info.innerHTML='<img src="'+live_site+'/plugins/content/extravote/assets/images/loading.gif" align="absmiddle" /> '+'<small>'+extravote_text[1]+'</small>';
+		info.innerHTML='<img src="'+live_site+'/media/plg_content_extravote/images/loading.gif" align="absmiddle" /> '+'<small>'+extravote_text[1]+'</small>';
 		var ajax=new XMLHttpRequest();
 		ajax.onreadystatechange=function() {
 		var response;
