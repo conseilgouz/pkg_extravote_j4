@@ -98,7 +98,7 @@ class plgContentExtraVote extends CMSPlugin
 		$rating  = 0;
 		
 	 	if(!$plgContentExtraVoteAddScript){ 
-         	$wa->addInlineStyle("
+         	$wa->addInlineScript("
 				var ev_basefolder = '".URI::base(true)."';
 				var extravote_text=Array('".
 					TEXT::_('PLG_CONTENT_EXTRAVOTE_MESSAGE_NO_AJAX')."','".
