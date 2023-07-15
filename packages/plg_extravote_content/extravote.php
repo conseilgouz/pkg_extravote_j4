@@ -16,6 +16,7 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Registry\Registry;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
 
 class plgContentExtraVote extends CMSPlugin
 {
@@ -98,7 +99,7 @@ class plgContentExtraVote extends CMSPlugin
 		
 	 	if(!$plgContentExtraVoteAddScript){ 
          	$wa->addInlineStyle("
-				var ev_basefolder = '".JURI::base(true)."';
+				var ev_basefolder = '".URI::base(true)."';
 				var extravote_text=Array('".
 					TEXT::_('PLG_CONTENT_EXTRAVOTE_MESSAGE_NO_AJAX')."','".
 					TEXT::_('PLG_CONTENT_EXTRAVOTE_MESSAGE_LOADING')."','".
