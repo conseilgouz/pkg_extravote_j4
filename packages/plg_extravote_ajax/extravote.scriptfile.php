@@ -4,8 +4,8 @@
 # ------------------------------------------------------------------------
 # author    Conseilgouz
 # from ExtraVote Plugin
-# Copyright (C) 2022 www.conseilgouz.com. All Rights Reserved.
-# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Copyright (C) 2024 www.conseilgouz.com. All Rights Reserved.
+# @license - https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
 -------------------------------------------------------------------------*/
 
 // No direct access
@@ -17,8 +17,8 @@ use Joomla\CMS\Filesystem\File;
 
 class plgAjaxExtraVoteInstallerScript
 {
-	private $min_joomla_version      = '4.0';
-	private $min_php_version         = '7.2';
+	private $min_joomla_version      = '5.0';
+	private $min_php_version         = '8.1';
 	
     function preflight($type, $parent)
     {
@@ -54,7 +54,7 @@ class plgAjaxExtraVoteInstallerScript
 		echo Text::_('PLG_AJAX_EXTRAVOTE_ENABLED_1');
 	}
 	function update($parent) {
-		echo Text::_('PLG_CONTENT_EXTRAVOTE_ENABLED_'.plgAjaxExtraVoteInstallerScript::isEnabled());
+		echo Text::_('PLG_AJAX_EXTRAVOTE_ENABLED_'.plgAjaxExtraVoteInstallerScript::isEnabled());
 	}
 	function isEnabled() {
 		$db = Factory::getDbo();

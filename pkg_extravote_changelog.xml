@@ -2,6 +2,18 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.2.0</version>
+        <note>
+            <item>Update :28/02/2024</item>
+        </note>
+		<change>
+			<item>Extravote becomes a service provider</item>
+			<item>Rich snippet : add bestRating/worstRating</item>
+		</cahnge>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.1.1</version>
         <note>
             <item>Update :15/07/2023</item>

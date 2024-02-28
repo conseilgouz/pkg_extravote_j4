@@ -2,16 +2,15 @@
 <extension 	version="4.0"	type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_EXTRAVOTE</name>
 	<author>ConseilGouz</author>
-	<creationDate>2023/03/07</creationDate>
-	<copyright>Copyright (C) 2023 Conseilgouz. All rights reserved.</copyright>
+	<creationDate>2024/02/28</creationDate>
+	<copyright>Copyright (C) 2024 Conseilgouz. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.0.7</version>
+	<version>4.2.0</version>
 	<description>PLG_CONTENT_EXTRAVOTE_XML_DESCRIPTION</description>
-	
+	<namespace path="src">ConseilGouz\Plugin\Content\Extravote</namespace>
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
-	
 	<install>
 		<sql>
 			<file driver="mysql" charset="utf8">sql/install.sql</file>
@@ -28,11 +27,11 @@
 		</schemas>
 	</update>
 	<files>
-		<filename plugin="extravote">extravote.php</filename>
+		<folder plugin="extravote">services</folder>
+		<folder>src</folder>		
 		<filename>index.html</filename>
 		<folder>sql</folder>
 	</files>
-	
 	<media destination="plg_content_extravote" folder="media">
 		<folder>images</folder>
 		<filename>extravote.css</filename>
@@ -49,7 +48,8 @@
 	<config>
 		<fields name="params">
 
-			<fieldset name="basic">
+			<fieldset name="basic" addfieldprefix="ConseilGouz\Plugin\Content\Extravote\Field">
+				<field name="version" type="version"  margintop="-3em"  extension="extravote" />
 
 				<field name="display" type="list"
 					default="0"

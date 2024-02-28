@@ -4,41 +4,48 @@
 # ------------------------------------------------------------------------
 # author    Conseilgouz
 # from joomlahill Plugin
-# Copyright (C) 2022 www.conseilgouz.com. All Rights Reserved.
+# Copyright (C) 2024 www.conseilgouz.com. All Rights Reserved.
 # @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 -------------------------------------------------------------------------*/
-
+namespace ConseilGouz\Plugin\Ajax\Extravote\Extension;
 // No direct access
 defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Registry\Registry;
+use Joomla\Event\SubscriberInterface;
+use Joomla\Database\DatabaseAwareTrait;
 
-class plgAjaxExtravote extends CMSPlugin
+class Extravote extends CMSPlugin implements SubscriberInterface
 {
-
-	function onAjaxExtravote()
+    use DatabaseAwareTrait;
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            'onAjaxExtravote'   => 'goAjax',
+        ];
+    }
+	
+	function goAjax($event)
 	{
 		$input	= Factory::getApplication()->input;
-
-		$user = Factory::getUser();
+		$user = Factory::getApplication()->getIdentity();;
 		$plugin	= PluginHelper::getPlugin('content', 'extravote');
-
 		$params = new Registry;
 		$params->loadString($plugin->params);
 
 		if ( $params->get('access') == 2 && !$user->get('id') )	{
 			return 'login';
 		} 
-		$user_rating = $input->getVar('user_rating');
+		$user_rating = $input->getInt('user_rating');
 		$xid         = $input->getInt('xid');
 		$table       = (($params->get('table',1)!=1 && !(int)$xid)?'#__content_rating':'#__content_extravote');
 		$cid = 0;
 		if ( $params->get('article_id') || $xid == 0 ) {
 				$cid = $input->getInt('cid');
 		}
-		$db  = Factory::getDbo();
+		$db  = $this->getDatabase();
 		$query	= $db->getQuery(true);
 		if ($user_rating < 0.5 || $user_rating > 5) {
 			return;
@@ -51,7 +58,7 @@ class plgAjaxExtravote extends CMSPlugin
 		try	{
 			$votesdb = $db->loadObject();
 		}
-		catch (RuntimeException $e)	{
+		catch (\RuntimeException $e)	{
 			return  'error';
 		}
 		$query	= $db->getQuery(true);
@@ -72,15 +79,15 @@ class plgAjaxExtravote extends CMSPlugin
 			try	{
 				$result = $db->execute();
 			}
-			catch (RuntimeException $e) {
-				return 'error';
+			catch (\RuntimeException $e) {
+			    return $event->addResult('error');
 			}
 			if ( $params->get('access') == 2 &&  $params->get('onevoteuser') == 1) { // one vote per user/article
-			    return $this->checkuservote($cid,$user->get('id'),$user_rating,$xid,$table,true);
+			    return $event->addResult($this->checkuservote($cid,$user->get('id'),$user_rating,$xid,$table,true));
 			}
 		} else { // vote exists in table
 			if ( $params->get('access') == 2 &&  $params->get('onevoteuser') == 1) { // one vote per user/article
-				return $this->checkuservote($cid,$user->get('id'),$user_rating,$xid,$table,false);
+			    return $event->addResult($this->checkuservote($cid,$user->get('id'),$user_rating,$xid,$table,false));
 			} elseif ($currip != ($votesdb->lastip)) {
 				$query
 					->update($db->quoteName($table))
@@ -92,19 +99,19 @@ class plgAjaxExtravote extends CMSPlugin
 				try	{
 					$result = $db->execute();
 				}
-				catch (RuntimeException $e)		{
-					return 'error';
+				catch (\RuntimeException $e)		{
+				    return $event->addResult('error');
 				}
 			} else { // last IP 
-				return 'voted';
+			    return $event->addResult('voted');
 			}
 		}
-		return 'thanks';
+		$event->addResult('thanks');
 	}
 	/* Extravote : 1 vote per user/article
 	*/
 	protected function checkuservote($cid,$user_id,$user_rating,$xid,$table,$create) {
-		$db  = Factory::getDbo();
+	    $db  = $this->getDatabase();
 		$query	= $db->getQuery(true);
 		$query->select('*')
 			->from($db->qn('#__content_extravote_user'))
@@ -113,8 +120,8 @@ class plgAjaxExtravote extends CMSPlugin
 		try	{
 			$voteuser = $db->loadObject();
 		}
-		catch (RuntimeException $e)	{
-			return  'error';
+		catch (\RuntimeException $e)	{
+			return   'error';
 		}
 		if (!$voteuser) { // No vote for this user/article
 			$columns = array('content_id', 'rating', 'user_id', 'created');
@@ -129,7 +136,7 @@ class plgAjaxExtravote extends CMSPlugin
 			try	{
 				$result = $db->execute();
 			}
-			catch (RuntimeException $e) {
+			catch (\RuntimeException $e) {
 				return 'error';
 			}
 			if (!$create) {// update vote count
@@ -145,7 +152,7 @@ class plgAjaxExtravote extends CMSPlugin
 				try	{
 					$result = $db->execute();
 				}	
-				catch (RuntimeException $e)		{
+				catch (\RuntimeException $e)		{
 					return 'error';
 				}
 			}
