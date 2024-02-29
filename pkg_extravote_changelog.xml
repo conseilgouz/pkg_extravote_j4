@@ -2,6 +2,17 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.2.1</version>
+        <note>
+            <item>Update :29/02/2024</item>
+        </note>
+		<fix>
+			<item>Rich snippet : add ItemReviewed</item>
+		</cahnge>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.2.0</version>
         <note>
             <item>Update :28/02/2024</item>

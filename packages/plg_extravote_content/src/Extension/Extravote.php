@@ -25,6 +25,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
     use DatabaseAwareTrait;
     
 	protected $article_id;
+	protected $article_title;
 	protected $view;
     public $myname='Extravote';
     protected $autoloadLanguage = true;
@@ -41,6 +42,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 		    $input	= Factory::getApplication()->input;
 		    $this->view = $input->getCmd('view');
 		    $this->article_id = $event->getItem()->id;
+		    $this->article_title = $event->getItem()->title;
 			
 		    $this->ExtraVotePrepare($event->getItem(), $event->getParams());	
 			
@@ -167,12 +169,16 @@ class Extravote extends CMSPlugin implements SubscriberInterface
  	 	$html .="
 </".$container.">";
  	 	if ($add_snippets) {
- 	 	    $html .= "<p class=\"visually-hidden\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">";
+ 	 	    $html .= "<div class=\"visually-hidden\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">";
+			$html .= "<div itemprop=\"itemReviewed\" itemscope itemtype=\"https://schema.org/SoftwareApplication\">";
+			$html .= "<span itemprop=\"name\">".$this->article_title."</span>";
+ 	 	    $html .= "</div>";
+ 	 	    $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
  	 	    $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
  	 	    $html .= "<meta itemprop=\"ratingValue\" content=\"".$rating."\" />";
  	 	    $html .= "<meta itemprop=\"bestRating\" content=\"5\" />";
  	 	    $html .= "<meta itemprop=\"worstRating\" content=\"1\" />";
- 	 	    $html .= "</p>";
+ 	 	    $html .= "</div>";
  	 	}
 	 	return $html;
  	}
