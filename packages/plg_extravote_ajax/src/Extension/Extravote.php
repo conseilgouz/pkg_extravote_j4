@@ -36,7 +36,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 		$params->loadString($plugin->params);
 
 		if ( $params->get('access') == 2 && !$user->get('id') )	{
-			return 'login';
+		    return $event->addResult('login');
 		} 
 		$user_rating = $input->getInt('user_rating');
 		$xid         = $input->getInt('xid');
@@ -59,7 +59,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 			$votesdb = $db->loadObject();
 		}
 		catch (\RuntimeException $e)	{
-			return  'error';
+		    return  $event->addResult('error');
 		}
 		$query	= $db->getQuery(true);
 		if ( !$votesdb ) { // No vote for this article
@@ -115,7 +115,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 		$query	= $db->getQuery(true);
 		$query->select('*')
 			->from($db->qn('#__content_extravote_user'))
-			->where('content_id = '.$db->quote($cid).' AND user_id = '.$db->quote($user_id));
+			->where('content_id = '.$db->quote($cid).' AND user_id = '.$db->quote($user_id).' AND extra_id = '.$db->quote($xid));
 		$db->setQuery($query);
 		try	{
 			$voteuser = $db->loadObject();
@@ -128,6 +128,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 			$values = array($cid, $user_rating, $user_id,  $db->quote(Factory::getDate()->toSql()));
 			$columns[] = 'extra_id';
 			$values[] = $xid;
+			$query	= $db->getQuery(true);
 			$query
 				->insert($db->quoteName('#__content_extravote_user'))
 				->columns($db->quoteName($columns))

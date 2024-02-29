@@ -2,13 +2,27 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.2.2</version>
+        <note>
+            <item>Update :29/02/2024</item>
+        </note>
+		<fix>
+			<item>Handle error message on registered user voting.</item>
+			<item>Insert content_extravote_user table error</item>
+			<item>French translation</item>
+			<item>Handle sub-content vote in article</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.2.1</version>
         <note>
             <item>Update :29/02/2024</item>
         </note>
 		<fix>
 			<item>Rich snippet : add ItemReviewed</item>
-		</cahnge>
+		</fix>
 	</changelog>
 	<changelog>
 		<element>extravote</element>
@@ -20,7 +34,7 @@
 		<change>
 			<item>Extravote becomes a service provider</item>
 			<item>Rich snippet : add bestRating/worstRating</item>
-		</cahnge>
+		</change>
 	</changelog>
 	<changelog>
 		<element>extravote</element>
