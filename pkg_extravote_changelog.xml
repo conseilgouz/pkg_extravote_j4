@@ -2,6 +2,18 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.2.4</version>
+        <note>
+            <item>Update :29/02/2024</item>
+        </note>
+		<fix>
+			<item>Changelogurl should be on a single line</item>
+			<item>add Changelogurl in content plugin</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.2.3</version>
         <note>
             <item>Update :29/02/2024</item>
