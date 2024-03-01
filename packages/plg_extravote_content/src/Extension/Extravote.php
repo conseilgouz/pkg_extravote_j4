@@ -169,18 +169,19 @@ class Extravote extends CMSPlugin implements SubscriberInterface
  	 	$html .="
 </".$container.">";
  	 	if ($add_snippets) {
- 	 	    $html .= "<div class=\"visually-hidden\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">";
-			$html .= "<div itemprop=\"itemReviewed\" itemscope itemtype=\"https://schema.org/WebApplication\">";
+			$html .= "<div class=\"visually-hidden\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Product\">";
 			$html .= "<span itemprop=\"name\">".$this->article_title."</span>";
-			$html .= "<span itemprop=\"operatingSystem\">Joomla</span>";
-			$html .= "<div itemprop=\"offers\" itemscope itemtype=\"https://schema.org/Offer\"><span itemprop=\"price\">0</span></div>";
- 	 	    $html .= "</div>";
+ 	 	    $html .= "<div class=\"visually-hidden\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">";
+//			$html .= "<div itemprop=\"itemReviewed\" itemscope itemtype=\"https://schema.org/WebApplication\">";
+//			$html .= "<span itemprop=\"operatingSystem\">Joomla</span>";
+//			$html .= "<div itemprop=\"offers\" itemscope itemtype=\"https://schema.org/Offer\"><span itemprop=\"price\">0</span></div>";
+// 	 	    $html .= "</div>";
  	 	    $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
  	 	    $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
  	 	    $html .= "<meta itemprop=\"ratingValue\" content=\"".$rating."\" />";
  	 	    $html .= "<meta itemprop=\"bestRating\" content=\"5\" />";
  	 	    $html .= "<meta itemprop=\"worstRating\" content=\"1\" />";
- 	 	    $html .= "</div>";
+ 	 	    $html .= "</div></div>";
  	 	}
 	 	return $html;
  	}
