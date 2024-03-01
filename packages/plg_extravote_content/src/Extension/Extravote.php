@@ -177,7 +177,6 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 //			$html .= "<div itemprop=\"offers\" itemscope itemtype=\"https://schema.org/Offer\"><span itemprop=\"price\">0</span></div>";
 // 	 	    $html .= "</div>";
  	 	    $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
- 	 	    $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
  	 	    $html .= "<meta itemprop=\"ratingValue\" content=\"".$rating."\" />";
  	 	    $html .= "<meta itemprop=\"bestRating\" content=\"5\" />";
  	 	    $html .= "<meta itemprop=\"worstRating\" content=\"1\" />";
