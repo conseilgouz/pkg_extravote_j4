@@ -3,12 +3,12 @@
 # ------------------------------------------------------------------------
 # author    Conseilgouz
 # from joomlahill Plugin
-# Copyright (C) 2022 www.conseilgouz.com. All Rights Reserved.
-# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Copyright (C) 2024 www.conseilgouz.com. All Rights Reserved.
+# @license - https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
 -------------------------------------------------------------------------*/
 .extravote {
 	margin: 0 0 10px;
-	width: 15em;
+	width: auto;
 }
 .extravote-small { }
 .extravote-stars,

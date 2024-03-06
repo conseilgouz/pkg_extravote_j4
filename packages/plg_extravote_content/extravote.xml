@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension 	version="5.0"	type="plugin" group="content" method="upgrade">
+<extension 	version="4.0"	type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_EXTRAVOTE</name>
 	<author>ConseilGouz</author>
-	<creationDate>2024-03-01</creationDate>
+	<creationDate>2024-03-06</creationDate>
 	<copyright>Copyright (C) 2024 Conseilgouz. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.2.6</version>
+	<version>4.2.7</version>
 	<description>PLG_CONTENT_EXTRAVOTE_XML_DESCRIPTION</description>
 	<namespace path="src">ConseilGouz\Plugin\Content\Extravote</namespace>
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
@@ -124,7 +124,6 @@
 					<option value="0">PLG_CONTENT_EXTRAVOTE_OPTION_AVERAGE_MODE_PERCENT</option>
 					<option value="1">PLG_CONTENT_EXTRAVOTE_OPTION_AVERAGE_MODE_FIVE</option>
 				</field>
-				
 				<field name="show_counter" type="list"
 					default="1"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_SHOW_COUNTER_LABEL"
@@ -134,7 +133,16 @@
 					<option value="2">PLG_CONTENT_EXTRAVOTE_OPTION_SHOW_COUNTER_MAIN</option>
 					<option value="3">PLG_CONTENT_EXTRAVOTE_OPTION_SHOW_COUNTER_EXTRA</option>
 				</field>
-				
+				<field name="one_line" 
+                    showon="show_rating!:0[AND]show_counter!:0"
+                    type="radio"
+					class="btn-group"
+					default="1"
+					label="PLG_CONTENT_EXTRAVOTE_FIELD_ONE_LINE_LABEL"
+					description="PLG_CONTENT_EXTRAVOTE_FIELD_ONE_LINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field name="show_unrated" type="radio"
 					class="btn-group"
 					default="1"
@@ -180,13 +188,9 @@
 					<option value="0">JNO</option>
 				</field>
 				
-				<field name="css" type="radio"
-					class="btn-group"
-					default="1"
+				<field name="css" type="hidden" default="1"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_LOAD_STYLESHEET_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_LOAD_STYLESHEET_DESC">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
 				</field>
 
 				<field name="size" type="list"
@@ -206,6 +210,10 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
+				<field name="customcss" type="textarea" label="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_LABEL" description="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_DESC" cols="400" rows="4" filter="raw" 
+					default=""	
+				/>	
+
 			</fieldset>
 
 		</fields>

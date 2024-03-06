@@ -2,6 +2,25 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.2.7</version>
+        <note>
+            <item>Update : 06/03/2024</item>
+        </note>
+		<fix>
+			<item>CSS : set width to auto</item>
+			<item>Hide ExtraVote CSS parameter (not used anymore)</item>
+		</fix>
+        <change>
+            <item>Rich Snippet : add info in Json+LD</item>
+        </change>
+        <addition>
+  			<item>Display on 1 or 2 lines</item>
+			<item>Add custom CSS</item>
+        </addition>
+    </changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.2.6</version>
         <note>
             <item>Update : 01/03/2024</item>
