@@ -2,6 +2,18 @@
 	<changelog>
 		<element>extravote</element>
 		<type>package</type>
+		<version>4.2.8</version>
+        <note>
+            <item>Update : 06/03/2024</item>
+        </note>
+		<fix>
+			<item>Language : change PLG_CONTENT_EXTRAVOTE_FIELD_ONE_LINE_LABEL </item>
+			<item>clean up code</item>
+		</fix>
+    </changelog>
+	<changelog>
+		<element>extravote</element>
+		<type>package</type>
 		<version>4.2.7</version>
         <note>
             <item>Update : 06/03/2024</item>

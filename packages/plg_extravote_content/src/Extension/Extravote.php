@@ -196,10 +196,6 @@ class Extravote extends CMSPlugin implements SubscriberInterface
             $html .= "<div class=\"visually-hidden\" itemscope=\"itemscope\" itemtype=\"http://schema.org/Product\">";
             $html .= "<span itemprop=\"name\">".$this->article_title."</span>";
             $html .= "<div class=\"visually-hidden\" itemprop=\"aggregateRating\" itemscope itemtype=\"http://schema.org/AggregateRating\">";
-            //			$html .= "<div itemprop=\"itemReviewed\" itemscope itemtype=\"https://schema.org/WebApplication\">";
-            //			$html .= "<span itemprop=\"operatingSystem\">Joomla</span>";
-            //			$html .= "<div itemprop=\"offers\" itemscope itemtype=\"https://schema.org/Offer\"><span itemprop=\"price\">0</span></div>";
-            // 	 	    $html .= "</div>";
             $html .= "<meta itemprop=\"ratingCount\" content=\"".$rating_count."\" />";
             $html .= "<meta itemprop=\"ratingValue\" content=\"".$rating."\" />";
             $html .= "<meta itemprop=\"bestRating\" content=\"5\" />";
