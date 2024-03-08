@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.3.1</version>
+	<version>4.3.2</version>
 	<description>PLG_CONTENT_EXTRAVOTE_XML_DESCRIPTION</description>
 	<namespace path="src">ConseilGouz\Plugin\Content\Extravote</namespace>
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
@@ -203,8 +203,10 @@
 					<option value="0">JNO</option>
 				</field>
    				<field name="sync" class="right half"
-				type="checkbox" default="0" 
-				label="PLG_CONTENT_EXTRAVOTE_FIELD_SYNC_TABLES_LABEL" description="PLG_CONTENT_EXTRAVOTE_FIELD_SYNC_TABLES_DESC"
+                    showon="table:1"
+                    type="checkbox" default="0" 
+                    label="PLG_CONTENT_EXTRAVOTE_FIELD_SYNC_TABLES_LABEL" 
+                    description="PLG_CONTENT_EXTRAVOTE_FIELD_SYNC_TABLES_DESC"
 				/>
 				<field name="stars" type="radio" 
                     showon="table:1"
@@ -216,10 +218,12 @@
 					<option value="5">JNO</option>
 				</field>
                 
-				<field name="customcss" class="clear" type="textarea" label="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_LABEL" description="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_DESC" cols="400" rows="4" filter="raw" 
+				<field name="customcss" class="clear" type="textarea" 
+                    label="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_LABEL" 
+                    description="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_DESC" 
+                    cols="400" rows="4" filter="raw" 
 					default=""	
 				/>	
-
 			</fieldset>
 
 		</fields>
