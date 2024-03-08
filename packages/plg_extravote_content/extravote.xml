@@ -2,12 +2,12 @@
 <extension 	version="4.0"	type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_EXTRAVOTE</name>
 	<author>ConseilGouz</author>
-	<creationDate>2024-03-06</creationDate>
+	<creationDate>2024-03-08</creationDate>
 	<copyright>Copyright (C) 2024 Conseilgouz. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.2.8</version>
+	<version>4.3.0</version>
 	<description>PLG_CONTENT_EXTRAVOTE_XML_DESCRIPTION</description>
 	<namespace path="src">ConseilGouz\Plugin\Content\Extravote</namespace>
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
@@ -53,7 +53,7 @@
 				<field name="version" type="version"  margintop="-3em"  extension="extravote" />
 
 				<field name="display" type="list"
-					default="0"
+					default="0" class="half"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_DISPLAY_MAIN_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_DISPLAY_MAIN_DESC">
 					<option value="0">PLG_CONTENT_EXTRAVOTE_OPTION_AFTER_TITLE</option>
@@ -71,7 +71,7 @@
 				</field>
 				
 				<field name="extra" type="list"
-					default="1"
+					default="1" class="half"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_USE_CODE_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_USE_CODE_DESC">
 					<option value="0">PLG_CONTENT_EXTRAVOTE_OPTION_USE_CODE_NEVER</option>
@@ -89,7 +89,7 @@
 				</field>
 
 				<field name="main" type="list"
-					default="1"
+					default="1" class="half"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_USE_CODE2_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_USE_CODE2_DESC">
 					<option value="0">PLG_CONTENT_EXTRAVOTE_OPTION_USE_CODE2_NEVER</option>
@@ -107,7 +107,7 @@
 				</field>
 				
 				<field name="show_rating" type="list"
-					default="1"
+					default="1" class="half"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_SHOW_AVERAGE_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_SHOW_AVERAGE_DESC">
 					<option value="0">JHIDE</option>
@@ -125,7 +125,7 @@
 					<option value="1">PLG_CONTENT_EXTRAVOTE_OPTION_AVERAGE_MODE_FIVE</option>
 				</field>
 				<field name="show_counter" type="list"
-					default="1"
+					default="1" class="half"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_SHOW_COUNTER_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_SHOW_COUNTER_DESC">
 					<option value="0">JHIDE</option>
@@ -161,17 +161,8 @@
 					<option value="0">JNO</option>
 				</field>
 				
-				<field name="stars" type="radio"
-					class="btn-group"
-					default="10"
-					label="PLG_CONTENT_EXTRAVOTE_FIELD_HALF_STARS_LABEL"
-					description="PLG_CONTENT_EXTRAVOTE_FIELD_HALF_STARS_DESC">
-					<option value="10">JYES</option>
-					<option value="5">JNO</option>
-				</field>
-				
 				<field name="access" type="radio"
-					class="btn-group"
+					class="btn-group half left"
 					default="1"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_ACCESS_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_ACCESS_DESC">
@@ -180,7 +171,7 @@
 				</field>
 				<field name="onevoteuser" type="radio"
 					showon="access:2"
-					class="btn-group"
+					class="btn-group half right"
 					default="1"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_ONEVOTEUSER_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_ONEVOTEUSER_DESC">
@@ -188,13 +179,13 @@
 					<option value="0">JNO</option>
 				</field>
 				
-				<field name="css" type="hidden" default="1"
+				<field name="css" type="hidden" default="1" class="clear full"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_LOAD_STYLESHEET_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_LOAD_STYLESHEET_DESC">
 				</field>
 
 				<field name="size" type="list"
-					default="1"
+					default="1" class="half none clear"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_SIZE_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_SIZE_DESC">
 					<option value="1">PLG_CONTENT_EXTRAVOTE_OPTION_SIZE_1</option>
@@ -203,14 +194,28 @@
 				</field>
 				
 				<field name="table" type="radio"
-					class="btn-group"
+					class="btn-group left half"
 					default="0"
 					label="PLG_CONTENT_EXTRAVOTE_FIELD_USE_EXTRAVOTE_TABLE_LABEL"
 					description="PLG_CONTENT_EXTRAVOTE_FIELD_USE_EXTRAVOTE_TABLE_DESC">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field name="customcss" type="textarea" label="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_LABEL" description="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_DESC" cols="400" rows="4" filter="raw" 
+   				<field name="sync" class="right half"
+				type="checkbox" default="0" 
+				label="PLG_CONTENT_EXTRAVOTE_FIELD_SYNC_TABLES_LABEL" description="PLG_CONTENT_EXTRAVOTE_FIELD_SYNC_TABLES_DESC"
+				/>
+				<field name="stars" type="radio" 
+                    showon="table:1"
+					class="btn-group clear"
+					default="10"
+					label="PLG_CONTENT_EXTRAVOTE_FIELD_HALF_STARS_LABEL"
+					description="PLG_CONTENT_EXTRAVOTE_FIELD_HALF_STARS_DESC">
+					<option value="10">JYES</option>
+					<option value="5">JNO</option>
+				</field>
+                
+				<field name="customcss" class="clear" type="textarea" label="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_LABEL" description="PLG_CONTENT_EXTRAVOTE_FIELD_CUSTOM_CSS_DESC" cols="400" rows="4" filter="raw" 
 					default=""	
 				/>	
 
