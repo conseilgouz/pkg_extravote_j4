@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension 	version="4.0"	type="plugin" group="content" method="upgrade">
+<extension 	version="5.0"	type="plugin" group="content" method="upgrade">
 	<name>PLG_CONTENT_EXTRAVOTE</name>
 	<author>ConseilGouz</author>
 	<creationDate>2024-03-08</creationDate>
@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.3.0</version>
+	<version>4.3.1</version>
 	<description>PLG_CONTENT_EXTRAVOTE_XML_DESCRIPTION</description>
 	<namespace path="src">ConseilGouz\Plugin\Content\Extravote</namespace>
 	<scriptfile>extravote.scriptfile.php</scriptfile> 
@@ -35,6 +35,7 @@
 	</files>
 	<media destination="plg_content_extravote" folder="media">
 		<folder>images</folder>
+		<filename>css_admin.js</filename>
 		<filename>extravote.css</filename>
 		<filename>extravote.js</filename>
 		<filename>index.html</filename>
