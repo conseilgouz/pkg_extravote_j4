@@ -1,7 +1,7 @@
 # pkg_extravote
-ExtraVote for Joomla 4.x
+ExtraVote for Joomla! 4.x/5.x
 
-From Joomlahill ExtraVote
+(From Joomlahill ExtraVote)
 
 Provides Ajax Voting functionality to Articles and their Content.
 
