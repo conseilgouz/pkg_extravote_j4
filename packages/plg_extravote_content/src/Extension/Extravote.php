@@ -63,7 +63,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
             }
         }
     }
-    protected function ContentExtraVote(&$article, &$params)
+    protected function ContentExtraVote($article, $params)
     {
         $table = ($this->params->get('table', 1) == 1 ? '#__content_extravote' : '#__content_rating');
         $rating_count = $rating_sum = 0;
@@ -205,7 +205,7 @@ class Extravote extends CMSPlugin implements SubscriberInterface
 
         return $html;
     }
-    protected function ExtraVotePrepare(&$article, &$params)
+    protected function ExtraVotePrepare($article, $params)
     {
         if (isset($this->article_id)) {
             $extra = $this->params->get('extra', 1);

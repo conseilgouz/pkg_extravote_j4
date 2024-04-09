@@ -4,13 +4,13 @@
 	type="package" method="upgrade">
 	<name>ExtraVote</name>
 	<author>Conseilgouz</author>
-	<creationDate>2024-03-08</creationDate>
+	<creationDate>2024-04-09</creationDate>
 	<packagename>extravote</packagename>
 	<copyright>Copyright (C) 2024 Conseilgouz. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
-	<version>4.3.2</version>
+	<version>4.3.3</version>
 	<description>Extravote provides the ajax, 5 star rating feature to your Joomla Content.</description>
 	<files folder="packages">
 		<file type="plugin" id="extravote" group="content">plg_extravote_content.zip</file>
